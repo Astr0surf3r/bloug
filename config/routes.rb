@@ -5,6 +5,8 @@ Bloug::Application.routes.draw do
   
   root :to => "posts#new"
 
+  match "my_action", :to => "posts#create"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
