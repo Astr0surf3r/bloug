@@ -1,4 +1,10 @@
 Bloug::Application.routes.draw do
+  get "posts/new"
+
+  get "posts/index"
+  
+  root :to => "posts#new"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
