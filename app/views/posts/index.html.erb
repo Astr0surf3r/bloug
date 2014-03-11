@@ -3,4 +3,11 @@
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 
+
+  <% @posts.each do |victor| %>
+   
+   <%=  victor.titulo %>
+   <%=  victor.mensaje %> <br />
+
+  <% end %>
 <p>Find me in app/views/posts/index.html.erb</p>
