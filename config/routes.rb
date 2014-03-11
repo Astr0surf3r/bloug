@@ -1,4 +1,8 @@
 Bloug::Application.routes.draw do
+  resources :comentarios
+
+  resources :articulos
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
