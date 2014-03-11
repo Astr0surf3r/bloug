@@ -3,6 +3,8 @@ Bloug::Application.routes.draw do
 
   resources :articulos
 
+  root :to => "articulos#new"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
