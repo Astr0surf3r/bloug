@@ -3,5 +3,8 @@ class Articulo < ActiveRecord::Base
 
   has_one :imagen
   has_many :comentarios
-
+   
+  has_many :relacions
+  has_many :categorias, through: :relacions
+  
 end
