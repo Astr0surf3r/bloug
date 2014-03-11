@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   	@posts = Post.all
 
-  	
+
   end
 
   def create
@@ -25,8 +25,9 @@ class PostsController < ApplicationController
 
     else
      
-     redirect_to root_path, flash[:notice] = "Post No created"
-
+     flash[:notice] = "Post No created"
+     redirect_to root_path
+    
     end
 
   end
