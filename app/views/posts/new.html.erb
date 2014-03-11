@@ -1,8 +1,22 @@
 <h1>Posts#new</h1>
 
-<form method="post" action="my_action">
-<input type="text" name="Input">
-<input type="submit" value="Insert">
-</form>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  
+<%= form_for(@post) do |p| %>
+ <p>
+ <%= p.label :titulo %> <br />
+ <%= p.text_field :titulo %>
+</p>
+ 
+ <p>
+ <%= p.label :mensaje %><br />
+ <%= p.text_area :mensaje %>
+</p>
 
+<p>
+	<%= p.submit 'Envia Post' %>
+</p>
+<% end %>
 <p>Find me in app/views/posts/new.html.erb</p>
