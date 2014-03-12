@@ -2,8 +2,10 @@ class ComentariosController < ApplicationController
   # GET /comentarios
   # GET /comentarios.json
   def index
-    @comentarios = Comentario.all
-
+    @articulo = Articulo.find(params[:articulo_id])
+    #@comentarios = Comentario.all
+    @comentarios = @articulo.comentarios
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @comentarios }
