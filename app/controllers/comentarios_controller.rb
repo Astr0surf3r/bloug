@@ -2,13 +2,11 @@ class ComentariosController < ApplicationController
   # GET /comentarios
   # GET /comentarios.json
   def index
-<<<<<<< HEAD
+
     @articulo = Articulo.find(params[:articulo_id])
     #@comentarios = Comentario.all
     @comentarios = @articulo.comentarios
-=======
-    @comentarios = Comentario.all
->>>>>>> e38f56807a2f7bab86d4a331bd7c690d5b02aa1f
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,10 +18,9 @@ class ComentariosController < ApplicationController
   # GET /comentarios/1.json
   def show
     @comentario = Comentario.find(params[:id])
-<<<<<<< HEAD
+
     @articulo = Articulo.find(params[:articulo_id])
-=======
->>>>>>> e38f56807a2f7bab86d4a331bd7c690d5b02aa1f
+
 
     respond_to do |format|
       format.html # show.html.erb
@@ -62,7 +59,7 @@ class ComentariosController < ApplicationController
 
     respond_to do |format|
       if @comentario.save
-
+        format.html { redirect_to [@comentario.articulo, @comentario], notice: 'Comentario was successfully created.' }
         format.json { render json: @comentario, status: :created, location: @comentario }
       else
         format.html { render action: "new" }
