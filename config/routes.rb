@@ -1,4 +1,5 @@
 Bloug::Application.routes.draw do
+<<<<<<< HEAD
   
   resources :articulos do
   
@@ -7,6 +8,11 @@ Bloug::Application.routes.draw do
   end
   
   root :to => "articulos#new"
+=======
+  resources :comentarios
+
+  resources :articulos
+>>>>>>> e38f56807a2f7bab86d4a331bd7c690d5b02aa1f
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
