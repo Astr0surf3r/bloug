@@ -5,7 +5,7 @@ class ComentariosController < ApplicationController
     @articulo = Articulo.find(params[:articulo_id])
     #@comentarios = Comentario.all
     @comentarios = @articulo.comentarios
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @comentarios }
@@ -16,6 +16,7 @@ class ComentariosController < ApplicationController
   # GET /comentarios/1.json
   def show
     @comentario = Comentario.find(params[:id])
+    @articulo = Articulo.find(params[:articulo_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -38,6 +39,7 @@ class ComentariosController < ApplicationController
   # GET /comentarios/1/edit
   def edit
     @comentario = Comentario.find(params[:id])
+    @articulo = Articulo.find(params[:articulo_id])
   end
 
   # POST /comentarios
@@ -62,10 +64,11 @@ class ComentariosController < ApplicationController
   # PUT /comentarios/1.json
   def update
     @comentario = Comentario.find(params[:id])
+    @articulo = Articulo.find(params[:articulo_id])
 
     respond_to do |format|
       if @comentario.update_attributes(params[:comentario])
-        format.html { redirect_to @comentario, notice: 'Comentario was successfully updated.' }
+        format.html { redirect_to [@articulo, @comentario], notice: 'Comentario was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -78,10 +81,11 @@ class ComentariosController < ApplicationController
   # DELETE /comentarios/1.json
   def destroy
     @comentario = Comentario.find(params[:id])
+    #@articulo = Articulo.find(params[:articulo_id])
     @comentario.destroy
 
     respond_to do |format|
-      format.html { redirect_to comentarios_url }
+      format.html { redirect_to articulo_comentarios_url }
       format.json { head :no_content }
     end
   end

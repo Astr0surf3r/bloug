@@ -13,9 +13,9 @@
   <tr>
     <td><%= comentario.contenido %></td>
     <td><%= comentario.articulo_id %></td>
-    <td><%= link_to 'Show', comentario %></td>
-    <td><%= link_to 'Edit', edit_comentario_path(comentario) %></td>
-    <td><%= link_to 'Destroy', comentario, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', [@articulo, comentario] %></td>
+    <td><%= link_to 'Edit', edit_articulo_comentario_path(@articulo, comentario) %></td>
+    <td><%= link_to 'Destroy', [@articulo, comentario], confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
