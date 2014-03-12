@@ -25,7 +25,8 @@ class ComentariosController < ApplicationController
   # GET /comentarios/new.json
   def new
     @comentario = Comentario.new
-
+    @articulo = Articulo.find(params[:articulo_id])
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @comentario }
@@ -41,10 +42,12 @@ class ComentariosController < ApplicationController
   # POST /comentarios.json
   def create
     @comentario = Comentario.new(params[:comentario])
+    @articulo = Articulo.find(params[:articulo_id])
+    @comentario.articulo_id = @articulo.id
 
     respond_to do |format|
       if @comentario.save
-        format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
+        format.html { redirect_to [@comentario.articulo, @comentario], notice: 'Comentario was successfully created.' }
         format.json { render json: @comentario, status: :created, location: @comentario }
       else
         format.html { render action: "new" }
