@@ -1,12 +1,16 @@
 Bloug::Application.routes.draw do
 
+  get "pages/bienvenido"
+
   resources :articulos do
   
   resources :comentarios
 
   end
   
-  root :to => "articulos#new"
+  #root :to => "articulos#new"
+
+  root :to => "pages#bienvenido"
 
 
   # The priority is based upon order of creation:
