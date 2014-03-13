@@ -7,6 +7,8 @@ Bloug::Application.routes.draw do
   resources :comentarios
 
   end
+
+  resources :usuarios 
   
   #root :to => "articulos#new"
 
