@@ -9,6 +9,11 @@ Bloug::Application.routes.draw do
   end
 
   resources :usuarios 
+
+  get 'victor', :to => "sessions#new"
+  post 'entrar', :to => "sessions#create"
+
+  get 'logout', :to => "sessions#destroy"
   
   #root :to => "articulos#new"
 
