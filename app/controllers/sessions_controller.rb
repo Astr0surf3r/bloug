@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
 def create
 
-	usuario = Usuario.where(apodo: params[:apodo])
+	usuario = Usuario.find_by_apodo(params[:apodo])
     
 	if usuario && usuario.authenticate(params[:password])
      
