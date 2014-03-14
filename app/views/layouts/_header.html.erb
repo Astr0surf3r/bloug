@@ -7,11 +7,16 @@
 	<!-- Right Nav Section --> 
 	<ul class="right"> 
 		<li><%= link_to 'Home', root_path %></li> 
-		<li><%= link_to 'Nuevo Articulo', new_articulo_path %></li> 
+		
 		<li><%= link_to 'Todos los Articulos', articulos_path %></li> 
+		<% if !logged_in? %>
 		<li><%= link_to 'Entrar', victor_path %></li> 
 		<li><%= link_to 'Crear Cuenta', new_usuario_path %></li>
+		<% end %>
+		<% if logged_in? %>
+		<li><%= link_to 'Nuevo Articulo', new_articulo_path %></li> 
         <li><%= link_to 'Salir', logout_path %></li>
+         <% end %>
 
 	   </ul> 
 	</section> 

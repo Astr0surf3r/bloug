@@ -1,6 +1,8 @@
 class ArticulosController < ApplicationController
   # GET /articulos
   # GET /articulos.json
+  before_filter :require_user, only: [:new, :show]
+
   def index
     @articulos = Articulo.all
 
