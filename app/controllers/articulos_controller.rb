@@ -8,6 +8,7 @@ class ArticulosController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.xml { render xml: @articulos }# index.html.erb
       format.json { render json: @articulos }
     end
   end
@@ -19,6 +20,7 @@ class ArticulosController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.xml { render xml: @articulo }
       format.json { render json: @articulo }
     end
   end
