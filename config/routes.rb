@@ -7,6 +7,13 @@ Bloug::Application.routes.draw do
   resources :comentarios
 
   end
+
+  resources :usuarios 
+
+  get 'victor', :to => "sessions#new"
+  post 'entrar', :to => "sessions#create"
+
+  get 'logout', :to => "sessions#destroy"
   
   #root :to => "articulos#new"
 

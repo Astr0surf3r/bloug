@@ -13,6 +13,9 @@
 
   <body>
    <%= render 'layouts/header' %>
+
+   <%= render 'layouts/message' %>
+   <%= session[:usuario] %>
     <%= yield %>
     
    <%= render 'layouts/footer' %> 
