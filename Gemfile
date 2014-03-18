@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+#archivo modificado de Victor
 
 gem 'rails', '3.2.3'
 
