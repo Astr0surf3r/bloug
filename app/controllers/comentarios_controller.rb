@@ -5,7 +5,7 @@ class ComentariosController < ApplicationController
 
     @articulo = Articulo.find(params[:articulo_id])
     #@comentarios = Comentario.all
-    @comentarios = @articulo.comentarios
+    @comentarios = @articulo.comentarios.order(created_at: :asc)
 
 
     respond_to do |format|

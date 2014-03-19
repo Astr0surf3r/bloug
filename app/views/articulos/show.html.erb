@@ -10,6 +10,18 @@
   <%= @articulo.cuerpo %>
 </p>
 
+<% @articulo.comentarios.each do |comentario| %>
+<p>
+<%= comentario.contenido %>
+<%= time_ago_in_words(comentario.created_at) %> 
+</p>
+<% end %>
+
+<p>
 <%= link_to 'Agrega Comentario', new_articulo_comentario_path(@articulo)%>
+</p>
+
+<p>
 <%= link_to 'Edit', edit_articulo_path(@articulo) %> |
 <%= link_to 'Back', articulos_path %>
+</p>

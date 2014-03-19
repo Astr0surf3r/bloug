@@ -4,6 +4,7 @@
   <tr>
     <th>Titulo</th>
     <th>Cuerpo</th>
+    <th>Numero de Comentario</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= articulo.titulo %></td>
     <td><%= articulo.cuerpo %></td>
+    <td><%= articulo.comentarios.size %></td>
     <td><%= link_to 'Show', articulo %></td>
     <td><%= link_to 'Edit', edit_articulo_path(articulo) %></td>
     <td><%= link_to 'Destroy', articulo, confirm: 'Are you sure?', method: :delete %></td>
