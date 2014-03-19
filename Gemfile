@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 #archivo modificado de Victor
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
