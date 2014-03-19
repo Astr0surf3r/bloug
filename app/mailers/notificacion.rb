@@ -8,5 +8,4 @@ class Notificacion < ActionMailer::Base
     mail(to: @usuario.apodo, subject: 'Bienvenido a Blog')
   end
 
-  end
 end
