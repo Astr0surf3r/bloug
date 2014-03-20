@@ -5,7 +5,8 @@ class ArticulosController < ApplicationController
 
   def index
     @articulos = Articulo.all
-
+    @busqueda = Articulo.search(params[:search])
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml { render xml: @articulos }# index.html.erb
@@ -83,5 +84,12 @@ class ArticulosController < ApplicationController
       format.html { redirect_to articulos_url }
       format.json { head :no_content }
     end
+  end
+  
+  def busqueda
+    @busqueda = Articulo.search(params[:search])
+    
+    redirect_to articulos_path
+    
   end
 end
