@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'pdfkit'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -59,6 +60,9 @@ module Bloug
     #for heroku
     config.assets.initialize_on_precompile = false
     config.assets.compile = true
+    
+    #to print in pdf an HTML page
+    config.middleware.use "PDFKit::Middleware"
  
   end
 end
