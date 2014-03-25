@@ -14,6 +14,10 @@ end
 
 gem 'foundation-rails'
 
+#to generate PDF
+gem 'pdfkit'
+#gem 'wkhtmltopdf', '~> 0.1.2'
+gem  'wkhtmltopdf-binary'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -59,6 +59,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     multi_json (1.9.0)
+    pdfkit (0.6.1)
     pg (0.17.1)
     pg (0.17.1-x86-mingw32)
     polyglot (0.3.4)
@@ -118,6 +119,7 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    wkhtmltopdf-binary (0.9.9.1)
 
 PLATFORMS
   ruby
@@ -128,6 +130,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   foundation-rails
   jquery-rails
+  pdfkit
   pg
   rails (= 3.2.13)
   rails_12factor
@@ -135,3 +138,4 @@ DEPENDENCIES
   sqlite3
   thin
   uglifier (>= 1.0.3)
+  wkhtmltopdf-binary
