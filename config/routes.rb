@@ -19,7 +19,8 @@ Bloug::Application.routes.draw do
 
   root :to => "pages#bienvenido"
 
-
+  get 'busqueda', :to => "articulos#busqueda"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

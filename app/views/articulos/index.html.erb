@@ -1,5 +1,22 @@
 <h1>Listing articulos</h1>
 
+<div class="row">
+<div class="large-12 columns">
+<p>
+<%= form_tag({:controller => "articulos", :action => "index"}, :method => "get") %> 
+
+<%= text_field_tag :search, params[:search] %>
+
+<%= submit_tag 'Busqueda Articulo', :name => nil %>
+
+
+<% @busqueda.each do |s| %>
+
+  <p><%= s.titulo %></p>
+
+<% end %>
+
+<p>
 <table>
   <tr>
     <th>Titulo</th>
@@ -23,5 +40,6 @@
 </table>
 
 <br />
-
+</div>
+</div>
 <%= link_to 'New Articulo', new_articulo_path %>
